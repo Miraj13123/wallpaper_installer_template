@@ -1,18 +1,26 @@
 #!/bin/bash
 
-# set the location of your wallpaper folder you want to install to.
+# === User Configuration ===
+# Set the path to your wallpaper installation folder here
+# Example: install_folder="$HOME/Pictures/wallpapers"
 install_folder="$HOME/Pictures/wallpapers"
-# for now it is set to the default wallpaper location for the hyprland desktop environment
+#now it is set to the default hyprland wallpaper location
 
+# Set root directory name where this script is located or stored. so that this script can be executed from one folder back from where it is stored.
+# for example, this script if u cloned it from github is located in "wallpaper_installer_template" folder. so set it like this (shown bellow)
+folder_name="wallpaper_installer_template"
 
+# === End User Configuration ===
+# you dont need to touch beyon that
 
-# Set repository root
 repo_root=""
-if [ -d "wmc" ]; then
-  repo_root="./wmc"
+if [ -d "$folder_name" ]; then
+  repo_root="./$folder_name"
 else
   repo_root="."
 fi
+
+
 
 # Define directories
 anvil="$repo_root/temp"
